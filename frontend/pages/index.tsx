@@ -1,13 +1,12 @@
 import Head from "next/head";
-import Login from "../pages/user/login";
-
+import ContentsList from "../components/contents/ContentsList";
 const IndexPage = () => (
   <>
     <Head>
       <title>HOME</title>
       <meta name="description" content="Home"/>
-      <Login/>
     </Head>
+    <ContentsList />
   </>
 );
 

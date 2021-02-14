@@ -4,14 +4,12 @@ import styled from "@emotion/styled";
 const FooterContainer = styled("footer")``;
 
 const FooterDiv = styled("div")`
-    height:10%;
-    background:black;
-    color:white;
-    text-align:center;
-    position:absolute;
-    bottom:0;
-    left:0;
-    width:100%;
+    background-color: black;
+    position:fixed;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    color: white;
 `;
 
 const Footer = () => (
