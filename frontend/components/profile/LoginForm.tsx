@@ -3,11 +3,11 @@ import UserAPI from "../../lib/api/user";
 import axios from "axios";
 
 const LoginForm = () => {
-    const [email, setEmail] = React.useState("");
+    const [user, setUser] = React.useState("");
     const [password, setPassword] = React.useState("");
 
-    const handleEmailChange = React.useCallback(
-        (e) => setEmail(e.target.value),
+    const handleUserChange = React.useCallback(
+        (e) => setUser(e.target.value),
         []
     );
     const handlePasswordChange = React.useCallback(
@@ -18,21 +18,7 @@ const LoginForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-           /*  await fetch('http://127.0.0.1:8000/', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                },
-                body: JSON.stringify({ user: { email, password }})
-            }).then(res => { console.log(res); }) */
-            await axios.post('http://127.0.0.1:8000/api/users/login', JSON.stringify({ user: { email, password }}),
-            {
-                headers: {
-                    "Content-Type": "application/json",
-                    "Access-Control-Allow-Origin": "*"
-                },
-            } );
-
+            await UserAPI.login(user, password);
         } catch (error) {
             console.error(error);
         }
@@ -46,10 +32,10 @@ const LoginForm = () => {
                     <fieldset className="form-group">
                     <input
                         className="form-control form-control-lg"
-                        type="email"
-                        placeholder="Email"
-                        value={email}
-                        onChange={handleEmailChange}
+                        type="text"
+                        placeholder="Username"
+                        value={user}
+                        onChange={handleUserChange}
                     />
                     </fieldset>
         

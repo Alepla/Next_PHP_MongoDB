@@ -9,7 +9,7 @@ use Tymon\JWTAuth\Contracts\JWTSubject;
 use Tymon\JWTAuth\Facades\JWTAuth;
 use Jenssegers\Mongodb\Auth\User as Authenticatable;
 
-class User extends Authenticatable implements JWTSubject
+class Auth extends Authenticatable implements JWTSubject
 {
     use Notifiable;
 
