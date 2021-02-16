@@ -1,19 +1,17 @@
-import Router, { useRouter } from "next/router";
-import React from "react";
+import React, { useState } from "react";
 import useSWR, { trigger } from "swr";
 import styled from "@emotion/styled";
 
-import { SERVER_URL } from "../../lib/utils/constants";
-import { API } from "../../lib/utils/constants";
 import ContentsAPI from "../../lib/api/contents";
-import fetcher from "../../lib/utils/fetcher";
 import checkLogin from "../../lib/utils/checkLogin";
 import storage from "../../lib/utils/storage";
 
-const ContentsList = () => {
+const ContentsList = ({ data }) => {
+    let [contents, setContents] = React.useState(data);
+    React.useEffect(() => { setContents({ data }) }, [data]);
+    
     const { data: currentUser } = useSWR("user", storage);
     const isLoggedIn = checkLogin(currentUser);
-    const { data, error } = useSWR(`http://127.0.0.1:8000/api/vod`, fetcher);
 
     const ContentList = styled("div")`
         display: grid;
@@ -91,7 +89,7 @@ const ContentsList = () => {
     return (
         <ContentList>
             {
-                data?.map((content) => (
+                contents?.data?.map((content) => (
                     <ContentContainer key={content.id}>
                         <ContentTitle>{content.titulo}</ContentTitle>
                         <FlexContent>

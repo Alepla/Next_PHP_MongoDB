@@ -1,12 +1,12 @@
 import Head from "next/head";
-import ContentsList from "../components/contents/ContentsList";
+import Contents from "../components/contents/Contents";
 const IndexPage = () => (
   <>
     <Head>
       <title>HOME</title>
       <meta name="description" content="Home"/>
     </Head>
-    <ContentsList />
+    <Contents />
   </>
 );
 
