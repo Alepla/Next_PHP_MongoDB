@@ -1,4 +1,6 @@
 import React from "react";
+import Router from "next/router";
+
 import UserAPI from "../../lib/api/user";
 import axios from "axios";
 
@@ -18,7 +20,9 @@ const LoginForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await UserAPI.login(user, password);
+            const {data, status} = await UserAPI.login(user, password);
+            window.localStorage.setItem("user", JSON.stringify(data));
+            Router.push("/");
         } catch (error) {
             console.error(error);
         }

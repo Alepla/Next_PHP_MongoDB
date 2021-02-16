@@ -4,8 +4,8 @@ import styled from "@emotion/styled";
 const FooterContainer = styled("footer")``;
 
 const FooterDiv = styled("div")`
-    background-color: black;
-    position:fixed;
+    background-color: #323b40;
+    position:relative;
     bottom: 0;
     width: 100%;
     height: 40px;

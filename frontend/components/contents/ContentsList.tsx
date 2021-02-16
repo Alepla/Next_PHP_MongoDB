@@ -14,7 +14,6 @@ const ContentsList = () => {
     const { data: currentUser } = useSWR("user", storage);
     const isLoggedIn = checkLogin(currentUser);
     const { data, error } = useSWR(`http://127.0.0.1:8000/api/vod`, fetcher);
-    console.log(data);
 
     const ContentList = styled("div")`
         display: grid;
@@ -77,7 +76,7 @@ const ContentsList = () => {
     `;
 
     const handleDelete = async (id) => {
-        //if (!isLoggedIn) return;
+        if (!isLoggedIn) return;
     
         const result = window.confirm("Do you really want to delete it?");
     
@@ -100,11 +99,16 @@ const ContentsList = () => {
                             <ContentBody>{content.sinopsis}</ContentBody>
                         </FlexContent>
                         <p>{content.genero} - {content.duracion}</p>
-                        <ButtonsContainer>
-                            <p><ContentButton>View</ContentButton></p>
-                            <p><ContentButton>Update</ContentButton></p>
-                            <p><ContentButton onClick={() => handleDelete(content._id)}>Delete</ContentButton></p>
-                        </ButtonsContainer>
+                        {
+                            isLoggedIn?
+                                <ButtonsContainer>
+                                    <p><ContentButton>View</ContentButton></p>
+                                    <p><ContentButton>Update</ContentButton></p>
+                                    <p><ContentButton onClick={() => handleDelete(content._id)}>Delete</ContentButton></p>
+                                </ButtonsContainer>
+                            :
+                                null
+                        }
                     </ContentContainer>
                 ))
             }
