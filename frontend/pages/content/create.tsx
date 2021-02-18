@@ -11,7 +11,8 @@ const ContentsCreate = () => {
         titulo: '',
         sinopsis: '',
         genero: '',
-        duracion: ''
+        duracion: '',
+        imagen: ''
     })
 
     const handleSubmit = async (event) => {
@@ -34,16 +35,19 @@ const ContentsCreate = () => {
             <Fragment>
                 <form className="row" onSubmit={handleSubmit}>
                     <label>Titulo</label>
-                    <input type="text" name="titulo" placeholder="titulo" required onChange={handleInputChange} /><br/>
+                    <input type="text" name="titulo" placeholder="Titulo" required onChange={handleInputChange} /><br/>
 
                     <label>Genero</label>
-                    <input type="text" name="genero" placeholder="genero" required onChange={handleInputChange} /><br/>
+                    <input type="text" name="genero" placeholder="Genero" required onChange={handleInputChange} /><br/>
 
                     <label>Duración</label>
-                    <input type="text" name="duracion" placeholder="duracion" required onChange={handleInputChange} /><br/>
+                    <input type="text" name="duracion" placeholder="Duración" required onChange={handleInputChange} /><br/>
 
                     <label>Sinopsis</label>
-                    <textarea name="sinopsis" placeholder="sinopsis" required onChange={handleInputChange}></textarea><br/>
+                    <textarea name="sinopsis" placeholder="Sinopsis" required onChange={handleInputChange}></textarea><br/>
+
+                    <label>Imagen</label>
+                    <input name="imagen" placeholder="Imagen" required onChange={handleInputChange} /><br/>
 
                     <button>Send</button>
                 </form>

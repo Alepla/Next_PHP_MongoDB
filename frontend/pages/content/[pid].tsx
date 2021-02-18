@@ -67,6 +67,8 @@ const ContentsDetails = ({ content: initialContent }) => {
         dispatch({ type: "SET_DURACION", text: e.target.value });
     const handleSinopsis = (e) => 
         dispatch({ type: "SET_SINOPSIS", text: e.target.value });
+    const handleImagen = (e) => 
+        dispatch({ type: "SET_IMAGE", text: e.target.value });
     
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -102,6 +104,9 @@ const ContentsDetails = ({ content: initialContent }) => {
 
                             <label>Sinopsis</label>
                             <textarea name="sinopsis" placeholder="sinopsis" required value={content.sinopsis} onChange={handleSinopsis}></textarea><br/>
+
+                            <label>Imagen</label>
+                            <input name="imagen" placeholder="Imagen" required onChange={handleImagen} /><br/>
 
                             <button>Send</button>
                         </form>

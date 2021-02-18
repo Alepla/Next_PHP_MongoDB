@@ -9,8 +9,8 @@ class VodController extends ApiController
 {
     public function index()
     {
-        $content = Vod::all();
-        return $content;
+        //return Vod::paginate(5);
+        return Vod::all();
     }
 
     public function content($id)
