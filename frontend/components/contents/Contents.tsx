@@ -18,7 +18,7 @@ const Contents = () => {
 
     let [contentsMacthed, setContentsMatched] = React.useState(generosMatch);
     let [totalContents, setTotalContents] = React.useState(0);
-    React.useEffect(() => { setTotalContents(data.length) }, [data]);
+    React.useEffect(() => { setTotalContents(data?.length) }, [data]);
 
     const [currentPage, setCurrentPage] = useState(1);
     const [contentsPerPage] = useState(2);
