@@ -14,6 +14,7 @@
 */
 
 Route::get('vod','App\Http\Controllers\VodController@index');
+Route::get('content/{id}', 'App\Http\Controllers\VodController@content');
 Route::post('add','App\Http\Controllers\VodController@store');
 Route::post('edit/{id}','App\Http\Controllers\VodController@update');
 Route::delete('delete/{id}','App\Http\Controllers\VodController@destroy');

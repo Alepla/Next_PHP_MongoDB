@@ -2,7 +2,6 @@ import React from "react";
 import Router from "next/router";
 
 import UserAPI from "../../lib/api/user";
-import axios from "axios";
 
 const LoginForm = () => {
     const [user, setUser] = React.useState("");

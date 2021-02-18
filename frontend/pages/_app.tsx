@@ -3,7 +3,6 @@ import React from "react";
 import { CacheProvider } from "@emotion/react";
 import { cache } from "@emotion/css";
 
-import ContextProvider from "../lib/context";
 import Layout from "../components/common/Layout";
 import '../styles/globals.css'
 
@@ -16,11 +15,9 @@ const MyApp = ({ Component, pageProps }) => (
        />
     </Head>
     <CacheProvider value={cache}>
-      <ContextProvider>
         <Layout>
           <Component {...pageProps} />
         </Layout>
-      </ContextProvider>
     </CacheProvider>
   </>
 );

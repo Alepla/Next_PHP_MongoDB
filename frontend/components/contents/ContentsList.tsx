@@ -1,15 +1,14 @@
 import React, { useState } from "react";
-import useSWR, { trigger } from "swr";
 import styled from "@emotion/styled";
+import useSWR from "swr";
 
-import ContentsAPI from "../../lib/api/contents";
-import checkLogin from "../../lib/utils/checkLogin";
 import storage from "../../lib/utils/storage";
+import checkLogin from "../../lib/utils/checkLogin";
+import CLink from "../common/CLink";
 
 const ContentsList = ({ data }) => {
-    let [contents, setContents] = React.useState(data);
+    let [contents, setContents] = useState(data);
     React.useEffect(() => { setContents({ data }) }, [data]);
-    
     const { data: currentUser } = useSWR("user", storage);
     const isLoggedIn = checkLogin(currentUser);
 
@@ -49,65 +48,36 @@ const ContentsList = ({ data }) => {
         padding-left: 0.5rem;
     `;
 
-    const ContentButton = styled("button")`  
-        cursor: pointer;
-        margin-top: 0.5rem;
-        margin-left: 0.5rem;
-        padding: 0.75rem 1.5rem;
-        font-size: 0.65rem;
-        font-weight: bold;
-        letter-spacing: 0.025rem;
-        text-transform: uppercase;
-        color: white;
-        background-color: black;
-        border: none;
-    `;
-
     const FlexContent = styled("div")`
         display: flex;
         align-items: flex-end;
     `;
-
-    const ButtonsContainer = styled("div")`
-        display: flex;
-        flex-flow: row wrap;
-    `;
-
-    const handleDelete = async (id) => {
-        if (!isLoggedIn) return;
-    
-        const result = window.confirm("Do you really want to delete it?");
-    
-        if (!result) return;
-    
-        await ContentsAPI.delete(id).then(() => {
-            /* trigger(`${SERVER_URL}/delete/${id}`);
-            Router.push(`/`);  */
-        });
-    };
     
     return (
         <ContentList>
             {
                 contents?.data?.map((content) => (
-                    <ContentContainer key={content.id}>
-                        <ContentTitle>{content.titulo}</ContentTitle>
-                        <FlexContent>
-                            <ContentImg src={content.image} />
-                            <ContentBody>{content.sinopsis}</ContentBody>
-                        </FlexContent>
-                        <p>{content.genero} - {content.duracion}</p>
-                        {
-                            isLoggedIn?
-                                <ButtonsContainer>
-                                    <p><ContentButton>View</ContentButton></p>
-                                    <p><ContentButton>Update</ContentButton></p>
-                                    <p><ContentButton onClick={() => handleDelete(content._id)}>Delete</ContentButton></p>
-                                </ButtonsContainer>
-                            :
-                                null
-                        }
-                    </ContentContainer>
+                    isLoggedIn?
+                        <ContentContainer key={content.id}>
+                            <CLink href="/content/[pid]" as={"content/"+content._id} className="btn btn-content">
+                                <ContentTitle>{content.titulo}</ContentTitle>
+                                <FlexContent>
+                                    <ContentImg src={content.image} />
+                                    <ContentBody>{content.sinopsis}</ContentBody>
+                                </FlexContent>
+                                <p>{content.genero} - {content.duracion}</p>
+                                
+                            </CLink>
+                        </ContentContainer>
+                    :
+                        <ContentContainer key={content.id}>
+                                <ContentTitle>{content.titulo}</ContentTitle>
+                                <FlexContent>
+                                    <ContentImg src={content.image} />
+                                    <ContentBody>{content.sinopsis}</ContentBody>
+                                </FlexContent>
+                                <p>{content.genero} - {content.duracion}</p>      
+                        </ContentContainer>
                 ))
             }
         </ContentList>

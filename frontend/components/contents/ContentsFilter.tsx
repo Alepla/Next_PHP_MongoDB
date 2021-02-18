@@ -11,12 +11,12 @@ const ContentsFilter = ({ data, getContentFiltered }) => {
     const myObj = {};
 
     contents?.data?.map((content) => {
-        generos = content.genero.split("/");
+        generos = content.genero?.split("/");
         allGeneros = allGeneros.concat(generos);
     });
 
     const toUpper = (res) => { 
-        return res.toUpperCase().trim();
+        return res?.toUpperCase().trim();
     };
     
     allGeneros = allGeneros?.map(toUpper);
