@@ -18,28 +18,28 @@ const ContentsAPI = {
     create: async (content, token) => {
         try {
             console.log(content);
-            /* const response = await axios.post('http://127.0.0.1:8000/api/add/', JSON.stringify({ content }), {
+            const response = await axios.post('http://127.0.0.1:8000/api/add/', JSON.stringify({ content }), {
                 headers: {
                     "Content-Type": "application/json",
                     "Access-Control-Allow-Origin": "*",
                     Authorization: "Token" + encodeURIComponent(token)
                 },
             });
-            return response; */
+            return response;
         } catch (error) {
             return error.response;
         }
     },
     update: async (content, id, token) => {
         try {
-            /* const response = await axios.post('http://127.0.0.1:8000/api/edit/' + id, JSON.stringify({ content }), {
+            const response = await axios.post('http://127.0.0.1:8000/api/edit/' + id, JSON.stringify({ content }), {
                 headers: {
                     "Content-Type": "application/json",
                     "Access-Control-Allow-Origin": "*",
                     Authorization: "Token" + encodeURIComponent(token)
                 },
             });
-            return response; */
+            return response;
         } catch (error) {
             return error.response;
         }
@@ -56,6 +56,34 @@ const ContentsAPI = {
             return response;
         } catch (error) {
             return error.response;
+        }
+    },
+    like: async (id, currentUser) => {
+        try {
+            const response = await axios.post('http://127.0.0.1:8000/api/content/like', JSON.stringify({ content: {id: id, user: currentUser?.username}}), {
+                headers: {
+                    "Content-Type": "application/json",
+                    "Access-Control-Allow-Origin": "*",
+                    Authorization: "Token" + encodeURIComponent(currentUser?.token)
+                },
+            });
+            return response;
+        } catch (error) {
+            return error;
+        }
+    },
+    dislike: async (id, currentUser) => {
+        try {
+            const response = await axios.post('http://127.0.0.1:8000/api/content/dislike', JSON.stringify({ content: {id: id, user: currentUser?.username}}), {
+                headers: {
+                    "Content-Type": "application/json",
+                    "Access-Control-Allow-Origin": "*",
+                    Authorization: "Token" + encodeURIComponent(currentUser?.token)
+                },
+            });
+            return response;
+        } catch (error) {
+            return error;
         }
     }
 };

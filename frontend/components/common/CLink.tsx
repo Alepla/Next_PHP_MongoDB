@@ -10,7 +10,7 @@ interface CustomLinkProps {
   children: React.ReactNode;
 }
 
-const ContentButton = styled("button")`
+const ContentButton = styled("div")`
   cursor: pointer;
   border: none;
 `;

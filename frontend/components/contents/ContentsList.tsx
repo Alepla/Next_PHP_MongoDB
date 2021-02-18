@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "@emotion/styled";
 import useSWR from "swr";
+import ContentsAPI from "../../lib/api/contents";
 
 import storage from "../../lib/utils/storage";
 import checkLogin from "../../lib/utils/checkLogin";
@@ -52,6 +53,22 @@ const ContentsList = ({ data }) => {
         display: flex;
         align-items: flex-end;
     `;
+
+    const handleLike = async (e, id) => {
+        e.preventDefault();
+        await ContentsAPI.like(id, currentUser).then((res) => {
+            console.log(res)
+            alert("Added");
+        });
+    }
+
+    const handleDislike = async (e, id) => {
+        e.preventDefault();
+        await ContentsAPI.dislike(id, currentUser).then((res) => {
+            console.log(res)
+            alert("Deleted");
+        });
+    }
     
     return (
         <ContentList>
@@ -66,7 +83,8 @@ const ContentsList = ({ data }) => {
                                     <ContentBody>{content.sinopsis}</ContentBody>
                                 </FlexContent>
                                 <p>{content.genero} - {content.duracion}</p>
-                                
+                                <button onClick={(e) => handleLike(e, content.id)}>Like</button>
+                                <button onClick={(e) => handleDislike(e, content.id)}>Dislike</button>
                             </CLink>
                         </ContentContainer>
                     :
@@ -76,7 +94,7 @@ const ContentsList = ({ data }) => {
                                     <ContentImg src={content.image} />
                                     <ContentBody>{content.sinopsis}</ContentBody>
                                 </FlexContent>
-                                <p>{content.genero} - {content.duracion}</p>      
+                                <p>{content.genero} - {content.duracion}</p>
                         </ContentContainer>
                 ))
             }

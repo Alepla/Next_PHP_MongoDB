@@ -55,4 +55,18 @@ class AuthController extends Controller
 
             return response()->json(compact('user'));
         } */
+
+    public function like(Request $request)
+    {
+        $userName = $request->input('content.user');
+        $user = Auth::where('user', $userName)->first()->push('favs', $request->input('content.id'));
+        return Auth::where('user', $userName)->first();
+    }
+
+    public function dislike(Request $request)
+    {
+        $userName = $request->input('content.user');
+        $user = Auth::where('user', $userName)->first()->pull('favs', $request->input('content.id'));
+        return Auth::where('user', $userName)->first();
+    }
 }

@@ -26,11 +26,11 @@ class VodController extends ApiController
     public function store(Request $request)
     {
         $content = new Vod();
-        $content->titulo = $request->get('titulo');
-        $content->genero = $request->get('genero');
-        $content->duracion = $request->get('duracion');    
-        $content->sinopsis = $request->get('sinopsis');
-        $content->image = $request->get('image');    
+        $content->titulo = $request->input('content.titulo');
+        $content->genero = $request->input('content.genero');
+        $content->duracion = $request->input('content.duracion');    
+        $content->sinopsis = $request->input('content.sinopsis');
+        $content->image = $request->input('content.image');    
         $content->save();
         return $this->respondSuccess();
     }
@@ -39,11 +39,11 @@ class VodController extends ApiController
     {
         $content = Vod::find($id);
         if($content != null) {
-            $content->titulo = $request->get('titulo');
-            $content->genero = $request->get('genero');
-            $content->duracion = $request->get('duracion');    
-            $content->sinopsis = $request->get('sinopsis');
-            $content->image = $request->get('image');         
+            $content->titulo = $request->input('content.titulo');
+            $content->genero = $request->input('content.genero');
+            $content->duracion = $request->input('content.duracion');    
+            $content->sinopsis = $request->input('content.sinopsis');
+            $content->image = $request->input('content.image');         
             $content->save();
             return $this->respondSuccess();
         } else {

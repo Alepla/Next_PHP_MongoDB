@@ -20,3 +20,5 @@ Route::post('edit/{id}','App\Http\Controllers\VodController@update');
 Route::delete('delete/{id}','App\Http\Controllers\VodController@destroy');
 
 Route::post('users/login', 'App\Http\Controllers\AuthController@login');
+Route::post('content/like/','App\Http\Controllers\AuthController@like');
+Route::post('content/dislike/','App\Http\Controllers\AuthController@dislike');
