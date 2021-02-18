@@ -16,6 +16,36 @@ const UserAPI = {
             console.log("Error", error.response);
             return error.response;
         }
+    },
+    userInfo: async (data) => {
+        try {
+            const response = await axios.post('http://127.0.0.1:8000/api/users/userInfo', JSON.stringify({data: {user: data.username}}),
+            {
+                headers: {
+                    "Content-Type": "application/json",
+                    "Access-Control-Allow-Origin": "*",
+                    Authorization: "Token" + encodeURIComponent(data?.token)
+                },
+            });
+            return response;
+        } catch (error) {
+            return error;
+        }   
+    },
+    getFavContents: async (data, token) => {
+        try {
+            const response = await axios.post('http://127.0.0.1:8000/api/user/favContents', JSON.stringify({ data: data }),
+            {
+                headers: {
+                    "Content-Type": "application/json",
+                    "Access-Control-Allow-Origin": "*",
+                    Authorization: "Token" + encodeURIComponent(token)
+                },
+            });
+            return response
+        } catch (error) {
+            return error;
+        }
     }
 }
 

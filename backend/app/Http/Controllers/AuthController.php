@@ -69,4 +69,10 @@ class AuthController extends Controller
         $user = Auth::where('user', $userName)->first()->pull('favs', $request->input('content.id'));
         return Auth::where('user', $userName)->first();
     }
+
+    public function userInfo(Request $request)
+    {
+        $userName = $request->input('data.user');
+        return $favs = Auth::where('user', $userName)->first();
+    }
 }

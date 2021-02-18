@@ -62,6 +62,10 @@ class VodController extends ApiController
         } else {
             return $this->respondFail($message = 'Not found', 404);
         }
-        
+    }
+
+    public function favContents(Request $request)
+    {
+        return $request;
     }
 }
