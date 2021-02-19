@@ -27,7 +27,7 @@ class AuthController extends Controller
         return response()->json(compact( 'token', 'username'));
     }
 
-    public function getAuthenticatedUser()
+/*     public function getAuthenticatedUser()
     {
         try {
             if (! $user = JWTAuth::parseToken()->authenticate()) {
@@ -42,7 +42,7 @@ class AuthController extends Controller
         }
 
         return response()->json(compact('user'));
-    }
+    } */
 
     public function like(Request $request)
     {

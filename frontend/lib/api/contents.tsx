@@ -7,7 +7,7 @@ const ContentsAPI = {
             const response = await axios.get('http://127.0.0.1:8000/api/content/' + id, {
                 headers: {
                     "Content-Type": "application/json",
-                    "Access-Control-Allow-Origin": "*",
+                    "Access-Control-Allow-Origin": "*"
                 },
             });
             return response;
@@ -22,7 +22,7 @@ const ContentsAPI = {
                 headers: {
                     "Content-Type": "application/json",
                     "Access-Control-Allow-Origin": "*",
-                    Authorization: "Token" + encodeURIComponent(token)
+                    Authorization: "Bearer " + encodeURIComponent(token)
                 },
             });
             return response;
@@ -36,7 +36,7 @@ const ContentsAPI = {
                 headers: {
                     "Content-Type": "application/json",
                     "Access-Control-Allow-Origin": "*",
-                    Authorization: "Token" + encodeURIComponent(token)
+                    Authorization: "Bearer " + encodeURIComponent(token)
                 },
             });
             return response;
@@ -50,7 +50,7 @@ const ContentsAPI = {
                 headers: {
                     "Content-Type": "application/json",
                     "Access-Control-Allow-Origin": "*",
-                    Authorization: "Token" + encodeURIComponent(token)
+                    Authorization: "Bearer " + encodeURIComponent(token)
                 },
             });
             return response;
@@ -64,7 +64,7 @@ const ContentsAPI = {
                 headers: {
                     "Content-Type": "application/json",
                     "Access-Control-Allow-Origin": "*",
-                    Authorization: "Token" + encodeURIComponent(currentUser?.token)
+                    Authorization: "Bearer " + encodeURIComponent(currentUser?.token)
                 },
             });
             return response;
@@ -78,7 +78,7 @@ const ContentsAPI = {
                 headers: {
                     "Content-Type": "application/json",
                     "Access-Control-Allow-Origin": "*",
-                    Authorization: "Token" + encodeURIComponent(currentUser?.token)
+                    Authorization: "Bearer " + encodeURIComponent(currentUser?.token)
                 },
             });
             return response;

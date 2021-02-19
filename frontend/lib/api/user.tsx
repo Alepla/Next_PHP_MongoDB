@@ -24,7 +24,7 @@ const UserAPI = {
                 headers: {
                     "Content-Type": "application/json",
                     "Access-Control-Allow-Origin": "*",
-                    Authorization: "Token" + encodeURIComponent(data?.token)
+                    Authorization: "Bearer " + encodeURIComponent(data?.token)
                 },
             });
             return response;
@@ -39,7 +39,7 @@ const UserAPI = {
                 headers: {
                     "Content-Type": "application/json",
                     "Access-Control-Allow-Origin": "*",
-                    Authorization: "Token" + encodeURIComponent(token)
+                    Authorization: "Bearer " + encodeURIComponent(token)
                 },
             });
             return response

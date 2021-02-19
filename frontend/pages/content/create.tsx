@@ -18,8 +18,7 @@ const ContentsCreate = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         await ContentsAPI.create(datos, currentUser?.token).then((res) => {
-            console.log(res);
-            //Router.push(`/`);
+            Router.push(`/`);
         });
     }
 

@@ -13,14 +13,21 @@
 |
 */
 
+Route::post('users/login', 'App\Http\Controllers\AuthController@login');
+
 Route::get('vod','App\Http\Controllers\VodController@index');
 Route::get('content/{id}', 'App\Http\Controllers\VodController@content');
-Route::post('add','App\Http\Controllers\VodController@store');
-Route::post('edit/{id}','App\Http\Controllers\VodController@update');
-Route::delete('delete/{id}','App\Http\Controllers\VodController@destroy');
+
 Route::post('user/favContents', 'App\Http\Controllers\VodController@favContents');
 
-Route::post('users/login', 'App\Http\Controllers\AuthController@login');
-Route::post('content/like/','App\Http\Controllers\AuthController@like');
-Route::post('content/dislike/','App\Http\Controllers\AuthController@dislike');
-Route::post('users/userInfo/', 'App\Http\Controllers\AuthController@userInfo');
+Route::group(['middleware' => ['jwt.verify']], function() {
+    Route::post('content/like/','App\Http\Controllers\AuthController@like');
+    Route::post('content/dislike/','App\Http\Controllers\AuthController@dislike');
+
+    Route::post('users/userInfo/', 'App\Http\Controllers\AuthController@userInfo');
+
+    Route::post('add','App\Http\Controllers\VodController@store');
+    Route::post('edit/{id}','App\Http\Controllers\VodController@update');
+    Route::delete('delete/{id}','App\Http\Controllers\VodController@destroy');
+
+});
