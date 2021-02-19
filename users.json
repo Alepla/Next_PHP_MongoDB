@@ -1,0 +1,12 @@
+[{
+  "_id": {
+    "$oid": "5fdb2996d957e006b6626c80"
+  },
+  "id": "7eb070e4-15fc-4f34-a166-ccf9fec0a8bd",
+  "user": "test",
+  "password": "098f6bcd4621d373cade4e832627b4f6",
+  "token": "",
+  "favs": [
+    "08cc4bd1-724a-4c5a-a3d7-99662b562b93"
+  ]
+}]

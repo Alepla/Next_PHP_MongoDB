@@ -1,0 +1,63 @@
+[{
+  "_id": {
+    "$oid": "5fdb5ca1d957e006b6626c81"
+  },
+  "id": "0ff5bb1f-f690-4eb0-80ae-b03615fb0b56",
+  "titulo": "Mucho Mike",
+  "genero": "Infantil / Dibujos animados",
+  "duracion": 25,
+  "sinopsis": "Mike, un perro carlino con gustos sofisticados que desea tener una vida tranquila, se ve forzado a defender su casa de un grupo de intrusos. Los mapaches, las tortugas y el gato Fluffy suelen aparecer en los peores momentos, y arrastran a Mike a sucesos inesperados.",
+  "image": "https://dyn1.heritagestatic.com/lf?set=path%5B1%2F7%2F7%2F0%2F1%2F17701544%5D%2Csizedata%5B850x600%5D&call=url%5Bfile%3Aproduct.chain%5D"
+},{
+  "_id": {
+    "$oid": "5fdb6033d957e006b6626c82"
+  },
+  "id": "08cc4bd1-724a-4c5a-a3d7-99662b562b93",
+  "titulo": "Carrera de caballos",
+  "genero": "INFANTIL / PANDA",
+  "sinopsis": "Panda y Nico tienen una nueva y divertida amiga, Lola. Los tres se reúnen en La Cabaña de Cartón: un espacio único, original y sostenible, donde desarrollan la creatividad y aprenden jugando. \nEl juego es el eje central de cada programa, que consta de tres secciones en torno a esta temática: \"¿A qué jugamos?\", \"Juegos Retro\" y \"Rimar es jugar\". \nCon \"¿A qué jugamos?\" no hay lugar para el aburrimiento. En este apartado, Panda, Nico y Lola utilizan materiales cotidianos para construir o recrear desde un teatro hasta una nave espacial o incluso el Viejo Oeste. Todo puede conseguirse con un poco de imaginación.\nEn la sección \"Juegos Retro\", los tres amigos invitan a algunos niños a conocer la cabaña y con ellos recuperan juegos tradicionales, con los que ya se divertían nuestros padres y abuelos.\nPor último, en \"Rimar es jugar\", los espectadores se convierten en protagonistas y tienen que adivinar la palabra que falta en una rima, a la que Lola después pone música y cantará a ritmo de rap, rock o pop.\nLa Cabaña de Cartón es un lugar donde desarrollar la imaginación y divertirse un montón.",
+  "duracion": 11,
+  "image": "https://dyn1.heritagestatic.com/lf?set=path%5B1%2F7%2F7%2F0%2F1%2F17701544%5D%2Csizedata%5B850x600%5D&call=url%5Bfile%3Aproduct.chain%5D"
+},
+{
+  "_id": {
+    "$oid": "5fdb5ca1d957e006b5626c81"
+  },
+  "id": "0ff5bb1f-f690-4eb0-80ae-b03618fb0b56",
+  "titulo": "La Liga de la Justicia de Zack Snyder",
+  "genero": "Fantástico / Acción / Superhéroes / Cómic / DC Comics",
+  "duracion": 25,
+  "sinopsis": "Versión expandida y ampliada de Justice League (2017), que representará una versión fiel a la visión original de la obra de Zack Snyder, que fue apartado de la producción de la misma tras una tragedia personal y reemplazado por Joss Whedon. Durante 3 años se estuvo rumoreando la existencia de esta versión, que había quedado inacabada a nivel de postproducción. Tras invertir Warner Bros una cifra indeterminada (entre 20-30 millones de dólares) en terminarla, el Snyder Cut se estrenará de forma exclusiva en la plataforma HBO Max en 2021.",
+  "image": "https://dyn1.heritagestatic.com/lf?set=path%5B1%2F7%2F7%2F0%2F1%2F17701544%5D%2Csizedata%5B850x600%5D&call=url%5Bfile%3Aproduct.chain%5D"
+},{
+  "_id": {
+    "$oid": "5fdb6033d957e006b6326c82"
+  },
+  "id": "08cc4bd1-724a-4c5a-a3d7-91662b562b93",
+  "titulo": "El caballero oscuro",
+  "genero": "Thriller / Acción / Drama / Superhéroes / Cómic / DC Comics / Secuela / Película de culto",
+  "sinopsis": "Batman/Bruce Wayne (Christian Bale) regresa para continuar su guerra contra el crimen. Con la ayuda del teniente Jim Gordon (Gary Oldman) y del Fiscal del Distrito Harvey Dent (Aaron Eckhart), Batman se propone destruir el crimen organizado en la ciudad de Gotham. El triunvirato demuestra su eficacia, pero, de repente, aparece Joker (Heath Ledger), un nuevo criminal que desencadena el caos y tiene aterrados a los ciudadanos. (FILMAFFINITY)",
+  "duracion": 11,
+  "image": "http://es.web.img3.acsta.net/medias/nmedia/18/86/86/43/20123634.jpg"
+},
+{
+  "_id": {
+    "$oid": "5fdb5ca1d957e006b5626c31"
+  },
+  "id": "0ff5bb1f-f690-4eb0-80ae-b03614fb0b56",
+  "titulo": "Iron Man",
+  "genero": "Fantástico / Acción / Aventuras / Ciencia ficción / Superhéroes / Cómic / Marvel Comics",
+  "duracion": 25,
+  "sinopsis": "El multimillonario fabricante de armas Tony Stark (Robert Downey Jr.) debe enfrentarse a su turbio pasado después de sufrir un accidente con una de sus armas. Equipado con una armadura de última generación tecnológica, se convierte en El hombre de hierro, un héroe que se dedica a combatir el mal en todo el mundo. (FILMAFFINITY)",
+  "image": "https://dyn1.heritagestatic.com/lf?set=path%5B1%2F7%2F7%2F0%2F1%2F17701544%5D%2Csizedata%5B850x600%5D&call=url%5Bfile%3Aproduct.chain%5D"
+},{
+  "_id": {
+    "$oid": "5fdb6033d957e00616326c82"
+  },
+  "id": "08cc4bd1-724a-4c5a-a3d7-91652b562b93",
+  "titulo": "Guardianes de la galaxia",
+  "genero": "Ciencia ficción / Acción / Aventuras / Comedia  / Aventura espacial / Superhéroes / Cómic / Marvel Comics / 3-D",
+  "sinopsis": "El temerario aventurero Peter Quill es objeto de un implacable cazarrecompensas después de robar una misteriosa esfera codiciada por Ronan, un poderoso villano cuya ambición amenaza todo el universo. Para poder escapar del incansable Ronan, Quill se ve obligado a pactar una complicada tregua con un cuarteto de disparatados inadaptados: Rocket, un mapache armado con un rifle, Groot, un humanoide con forma de árbol, la letal y enigmática Gamora y el vengativo Drax the Destroyer. Pero cuando Quill descubre el verdadero poder de la esfera, deberá hacer todo lo posible para derrotar a sus extravagantes rivales en un intento desesperado de salvar el destino de la galaxia. (FILMAFFINITY)",
+  "duracion": 11,
+  "image": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ50rn4CfwLLv7loeYpTZczpniTvbTi9aMBTuWOWGBWnTFJ-UMv"
+}]
