@@ -1,5 +1,4 @@
 import axios from "axios";
-//import { SERVER_URL } from "../utils/constants";
 
 const ContentsAPI = {
     get: async (id) => {
